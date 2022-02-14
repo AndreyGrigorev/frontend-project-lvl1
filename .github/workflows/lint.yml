@@ -1,5 +1,7 @@
 name: make-lint
-on: push
+on:
+  check_run:
+    types: commit
 jobs:
   my-job:
     runs-on: make lint
