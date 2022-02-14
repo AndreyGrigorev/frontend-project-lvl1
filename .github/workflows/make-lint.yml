@@ -1,10 +1,5 @@
 name: make-lint
-on:
-  issue:
-    types:
-      - created
-      - edited
-      - deleted
+on: push
 jobs:
   job1:
     runs-on: ubuntu-latest
