@@ -3,5 +3,8 @@ on:
   check_run:
     types: commit
 jobs:
-  my-job:
-    runs-on: make lint
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: make lint
