@@ -1,6 +1,6 @@
 name: make-lint
 on:
-  label:
+  issue:
     types:
       - created
       - edited
