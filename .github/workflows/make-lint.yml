@@ -1,7 +1,10 @@
 name: make-lint
 on:
-  check_run:
-    types: commit
+  label:
+    types:
+      - created
+      - edited
+      - deleted
 jobs:
   job1:
     runs-on: ubuntu-latest
