@@ -8,5 +8,3 @@ function namePlayer() {
 }
 
 export {namePlayer};
-
-random text for test make lint
