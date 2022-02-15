@@ -8,5 +8,8 @@ parserOptions:
   sourceType: module
 rules: {
   no-console: 0,
-  import/extensions: 2 [never, js: always]
+  import/extensions: [
+    error
+    js: always
+  ]
 }
