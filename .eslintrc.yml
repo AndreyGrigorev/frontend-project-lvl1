@@ -8,5 +8,5 @@ parserOptions:
   sourceType: module
 rules: {
   no-console: off,
-  import/extensions: ["always"]
+  import/extensions: always
 }
