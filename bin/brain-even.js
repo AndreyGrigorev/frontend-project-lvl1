@@ -24,6 +24,6 @@ export default function brainIven(player) {
 
 console.log('Welcome to the Brain Games!');
 
-namePlayer();
+const name = namePlayer();
 
-brainIven();
+brainIven(name);
