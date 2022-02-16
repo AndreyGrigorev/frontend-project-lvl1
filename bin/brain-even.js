@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import namePlayer from '../src/cli.js';
+import getNamePlayer from '../src/cli.js';
 
 function brainIven(player) {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -14,6 +14,7 @@ function brainIven(player) {
       console.log('Correct!');
     } else {
       console.log(`Let's try again, ${player}!`);
+
       return;
     }
   }
@@ -21,8 +22,4 @@ function brainIven(player) {
   console.log(`Congratulations, ${player}!`);
 }
 
-console.log('Welcome to the Brain Games!');
-
-const name = namePlayer();
-
-brainIven(name);
+brainIven(getNamePlayer());

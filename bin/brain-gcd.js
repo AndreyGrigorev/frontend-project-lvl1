@@ -3,25 +3,28 @@
 import readlineSync from 'readline-sync';
 import getNamePlayer from '../src/cli.js';
 
-function brainIven(player) {
-  console.log('What is the result of the expression?');
+function gcd(a, b) {
+  let gcdResult = 1;
+  if (a % b === 0 || b % a === 0) {
+    gcdResult = a <= b ? a : b;
+
+    return gcdResult;
+  }
+  const min = a <= b ? a : b;
+  for (let i = 1; i < min; i += 1) {
+    if (a % i === 0 && b % i === 0) gcdResult = i;
+  }
+
+  return gcdResult;
+}
+
+function brainGcd(player) {
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
     const num1 = Math.floor(Math.random() * 99) + 1;
     const num2 = Math.floor(Math.random() * 99) + 1;
-    const array = ['+', '-', '*'];
-    const rand = Math.floor(Math.random() * array.length);
-    const operator = array[rand];
-    console.log(`Question: ${num1} ${operator} ${num2}`);
-    let rightanswer = 1;
-    if (operator === '+') {
-      rightanswer = num1 + num2;
-    }
-    if (operator === '-') {
-      rightanswer = num1 - num2;
-    }
-    if (operator === '*') {
-      rightanswer = num1 * num2;
-    }
+    console.log(`Question: ${num1} ${num2}`);
+    const rightanswer = gcd(num1, num2);
     let answer = readlineSync.question('Your answer: ');
     answer = Number(answer);
     if (answer === rightanswer) {
@@ -37,4 +40,4 @@ function brainIven(player) {
   console.log(`Congratulations, ${player}!`);
 }
 
-brainIven(getNamePlayer());
+brainGcd(getNamePlayer());
